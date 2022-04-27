@@ -13,26 +13,22 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (request, response) => {
-
   response.render('index');
+});
+
+app.get('/beers', async (request, response) => {
+  const beers = await punkAPI.getBeers();
+  response.render('beers', {beers});
 
 });
 
-app.get('/beers', (request, response) => {
-
-  response.render('beers');
-
+app.get('/random-beer', async (request, response) => {
+  const randomBeer = await punkAPI.getRandom();
+  response.render('random-beer', {randomBeer});
 });
-
-app.get('/random-beer', (request, response) => {
-
-  response.render('random-beer');
-
-});
-
 
 app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.listen(3000, () => console.log('🏃‍ on port 3000'));
+app.listen(4000, () => console.log('🏃‍ on port 4000'));
