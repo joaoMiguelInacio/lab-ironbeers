@@ -19,16 +19,16 @@ app.get('/', (request, response) => {
 app.get('/beers', async (request, response) => {
   const beers = await punkAPI.getBeers();
   response.render('beers', {beers});
-
 });
 
 app.get('/random-beer', async (request, response) => {
-  const randomBeer = await punkAPI.getRandom();
-  response.render('random-beer', {randomBeer});
+  const aBeer = await punkAPI.getRandom();
+  response.render('random-beer', {aBeer});
 });
 
-app.get('/', (req, res) => {
-  res.render('index');
+app.get('/:id', async (request, response) => {
+  const aBeer = await punkAPI.getBeer(request.params.id);
+  response.render('a-beer', {aBeer});
 });
 
-app.listen(4000, () => console.log('🏃‍ on port 4000'));
+app.listen(3000, () => console.log('🏃‍ on port 3000'));
