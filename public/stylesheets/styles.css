@@ -14,7 +14,7 @@ grey: #bfbfbf;
     background-color: #2081c3;
     display: flex;
     gap: 50px;
-    padding: 20px;
+    padding: 20px 0px 20px 0px;
     position: absolute;
     top: 0;
     left: 0;
@@ -23,6 +23,7 @@ grey: #bfbfbf;
 }
 
 #navbar a {
+    margin-left: 20px;
     color: #f7f9f9;
     text-decoration: none;
 }
@@ -141,7 +142,7 @@ grey: #bfbfbf;
 .footer {
     background-color: #0a2c42;
     color: white;
-    padding: 20px;
+    padding: 20px 0px 20px 20px;
     box-shadow: 10px #0a2c42;
     position: fixed;
     bottom: 0;
