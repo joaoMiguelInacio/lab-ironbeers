@@ -54,7 +54,7 @@ grey: #bfbfbf;
     background-color: #2081c3;
     padding: 15px;
     border-radius: 15px;
-    box-shadow: 0px 5px 10px #0a2c42;
+    box-shadow: 0px 0px 10px #0a2c42;
 }
 
 .random-beer-container{
@@ -84,7 +84,6 @@ grey: #bfbfbf;
     grid-column-gap: 30px;
     grid-row-gap: 30px;
     margin: 30px;
-
 }
 
 .beer-card {
