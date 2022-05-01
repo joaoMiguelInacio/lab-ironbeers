@@ -13,22 +13,40 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (request, response) => {
-  response.render('index');
+  try {  
+    response.render('index');
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.get('/beers', async (request, response) => {
-  const beers = await punkAPI.getBeers();
-  response.render('beers', {beers});
+  try {
+    const beers = await punkAPI.getBeers();
+    response.render('beers', {beers});
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.get('/random-beer', async (request, response) => {
-  const aBeer = await punkAPI.getRandom();
-  response.render('random-beer', {aBeer});
+  try {
+    const arrayWithABeer = await punkAPI.getRandom();
+    const aBeer = arrayWithABeer[0];
+    response.render('aBeer', aBeer);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.get('/:id', async (request, response) => {
-  const aBeer = await punkAPI.getBeer(request.params.id);
-  response.render('a-beer', {aBeer});
+  try {
+    const arrayWithABeer = await punkAPI.getBeer(request.params.id);
+    const aBeer = arrayWithABeer[0];
+    response.render('aBeer', aBeer);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.listen(3000, () => console.log('🏃‍ on port 3000'));
