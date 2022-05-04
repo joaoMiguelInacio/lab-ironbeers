@@ -138,7 +138,7 @@ grey: #bfbfbf;
     color: #f7f9f9;
 }
 
-.footer {
+#footer {
     background-color: #0a2c42;
     color: white;
     padding: 20px 0px 20px 20px;
@@ -148,4 +148,8 @@ grey: #bfbfbf;
     left: 0;
     width: 100%;
     text-decoration: none;
+}
+
+.hidden {
+    display:none;
 }

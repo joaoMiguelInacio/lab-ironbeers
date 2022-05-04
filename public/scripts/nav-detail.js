@@ -4,6 +4,7 @@ if (window.location.pathname === "/"){
 
 if (window.location.pathname === "/beers"){
     document.getElementById("nav-beers").classList.add("current-page");
+    document.getElementById("footer").classList.add("hidden");
 }
 
 if (window.location.pathname === "/random-beer"){
